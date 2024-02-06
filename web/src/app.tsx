@@ -2,9 +2,14 @@ import logo from "./assets/Logo.svg";
 import { NewNoteCard } from "./components/new-note-card";
 import { NoteCard } from "./components/note-card";
 
+const note = {
+  date: new Date(),
+  content: "Hello World!",
+};
+
 export function App() {
   return (
-    <div className="mx-auto max-w-6xl my-12 space-y-6">
+    <div className="mx-auto max-w-6xl md:p-6 sm:p-4 my-12 space-y-6">
       <img src={logo} alt="NLW expert" />
       <form className="w-full">
         <input
@@ -17,9 +22,9 @@ export function App() {
       <div className="h-px bg-slate-400"></div>
       <div className="grid grid-cols-3 auto-rows-[250px] gap-6">
         <NewNoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
+        <NoteCard note={note} />
+        <NoteCard note={note} />
+        <NoteCard note={note} />
       </div>
     </div>
   );
